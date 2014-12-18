@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Browserify 4</title>
+  <script src="./bundle.js"></script>
+</head>
+<body>
+  <p>Bug <a href="https://github.com/substack/node-browserify/issues/1020">#1020</a> does not repro in Browserify 4:</p>
+
+  <h3>Expected output</h3>
+  <p>
+    <pre>
+Main: hello: Hello.
+Browser: hello: Hello.
+    </pre>
+  </p>
+
+  <h3>Actual output</h3>
+  <p>
+    <pre>
+Main: hello: Hello.
+Browser: hello: Hello.
+    </pre>
+  </p>
+  <script>
+    var hello = require('hello');
+    console.log('Browser: hello:', hello());
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Browserify 7</title>
+  <script src="./bundle.js"></script>
+</head>
+<body>
+  <p>Repro for bug <a href="https://github.com/substack/node-browserify/issues/1020">#1020</a> in Browserify 7:</p>
+
+  <h3>Expected output</h3>
+  <p>
+    <pre>
+Main: hello: Hello.
+Browser: hello: Hello.
+    </pre>
+  </p>
+
+  <h3>Actual output</h3>
+  <p>
+    <pre>
+Uncaught Error: Cannot find module './hello'
+Uncaught ReferenceError: require is not defined
+    </pre>
+  </p>
+  <script>
+    var hello = require('hello');
+    console.log('Browser: hello:', hello());
+  </script>
+</body>
+</html>

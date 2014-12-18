@@ -1,0 +1,13 @@
+{
+  "name": "browserify-4-1020-good",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Daniel Gasienica <daniel@gasienica.ch>",
+  "dependencies": {
+    "browserify": "4.x"
+  },
+  "scripts": {
+    "build": "browserify --require ../hello.js:hello ../main.js > bundle.js"
+  },
+  "license": "BSD"
+}
